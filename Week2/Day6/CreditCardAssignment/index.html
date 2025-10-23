@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/submit" method="post">
+        <fieldset>
+            <img src="./Lock img.jpg" height="20" alt="Lock image"/>
+            <header style="display: inline;">This is a secure 128-bit SSL Encrypted payment. You're safe.</header>
+            
+            <hr/>
+
+            <input required type="radio" id="radBtn1" name="radBtn" value="Credit Card"/>Credit Card(Visa, Mastercard)
+            <img src="./Visa CC.jpeg" height="20" alt="Visa Credit Card icon"/>
+            <img src="./MasterCard CC.png" height="20" alt="MasterCard Credit Card icon"/>
+
+            <input type="radio" id="radBtn2" name="radBtn" value="PayPal" />PayPal
+            <img src="./PayPal CC.png" height="20" alt="PayPal Credit Card icon"/>
+
+            <br/><br/>
+            
+            Card number
+            <p style="display: inline;">The 16 digits in front of your card</p>
+            <input required type="number" id="cardnum" name="cardnum"/>
+
+            <br/><br/>
+
+            Expiration date
+            <select required id="dropdown1" name="dropdown1">
+                <option disabled selected>Month</option>
+                <option>Jan</option>
+                <option>Feb</option>
+                <option>Mar</option>
+                <option>Apr</option>
+                <option>May</option>
+                <option>Jun</option>
+                <option>Jul</option>
+                <option>Aug</option>
+                <option>Sep</option>
+                <option>Oct</option>
+                <option>Nov</option>
+                <option>Dec</option>
+            </select>
+
+            /
+
+            <select required id="dropdown2" name="dropdown2">
+                <option disabled selected>Year</option>
+                <option>2000</option>
+                <option>2001</option>
+                <option>2002</option>
+                <option>2003</option>
+                <option>2004</option>
+            </select>
+
+            &nbsp;&nbsp;&nbsp;
+            CVV2/CVC2
+            <!-- <br/> -->
+            <input required type="number" id="cvv2/cvc2 details" name="cvv2/cvc2 details"/>
+            <p>The last 3 digits displayed on the back of your card</p>
+
+            <br/><br/>
+
+            Full Name on a Card
+            <input required type="text" id="name on card" name="name on card"/>
+
+            <br/><br/>
+
+            <footer>
+                You will be charged $29.00 every month
+            </footer>
+
+        </fieldset>
+
+        <input type="submit" value="Complete Transaction"/>
+
+    </form>
+    
+
+</body>
+</html>
