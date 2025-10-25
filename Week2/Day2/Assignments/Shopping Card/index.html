@@ -1,1 +1,156 @@
-dd
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <style>
+
+        html, body{
+            height: 100vh;
+            background-color: #E8E8E8;
+        }
+
+        h1{
+            font-family: "Roboto", sans-serif;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        #navbar{
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            padding: 0.5rem;
+        }
+
+        .btn{
+            flex: 1;
+            max-width: 100px;
+            border-radius: 15px;
+            padding: 5px;
+        }
+
+        .prodDetContainer{
+            display: flex;
+            gap: 2rem;
+            justify-content: space-around;
+            padding: 1rem;
+        }
+
+        .prodDet{
+            background-color: white;
+            flex: 1 1 0;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .image{
+            border-radius: 5px;
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .title{
+            font-size: 20px;
+            font-weight: bold;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .desc{
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #A9A9A9;
+        }
+
+        .price{
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: rgb(0, 128, 0);
+            font-weight: 700;
+        }
+
+        #prstrike{
+            text-decoration: line-through;
+            color: #808080;
+        }
+
+        .prbtn{
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        @media (max-width: 1440px){
+            .prodDetContainer{
+                flex-direction: column;
+            }
+
+            .image{
+                height: auto;
+            }
+
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>Best Clothing Collection</h1>
+
+    <hr/>
+
+    <nav id="navbar">
+        <button class="btn">T-Shirt</button>
+        <button class="btn">Jacket</button>
+        <button class="btn">Pant</button>
+        <button class="btn">Shorts</button>
+        <button class="btn">Hoodie</button>
+    </nav>
+
+    <br/><br/>
+
+    <div class="prodDetContainer">
+        <div class="prodDet prodDet1">
+            <img class="image" src="./Cotton t-shirt.jpg" class="prod1 img"/>
+            <div class="prod1 title">Cotton T-Shirt</div>
+            <div class="prod1 desc">Simple t-shirt for daily use</div>
+            <div class="prod1 price">$35.00 &nbsp;<span id="prstrike">$45.99</span></div>
+            <button class="prod1 prbtn bp1">Add to Cart</button>
+        </div>
+
+        <div class="prodDet prodDet2">
+            <img class="image" src="./Short sleeve.jpg" class="prod2 img"/>
+            <div class="prod2 title">Men's Short Sleeve T-Shirt</div>
+            <div class="prod2 desc">Simple t-shirt for daily use</div>
+            <div class="prod2 price">$33.00 &nbsp;<span id="prstrike">$40.99</span></div>
+            <button class="prod2 prbtn bp2">Add to Cart</button>
+        </div>
+
+        <div class="prodDet prodDet3">
+            <img class="image" src="./Simple t-shirt.jpg" class="prod3 img"/>
+            <div class="prod3 title">UA Tech T-Shirt</div>
+            <div class="prod3 desc">Simple t-shirt for daily use</div>
+            <div class="prod3 price">$50.00 &nbsp;<span id="prstrike">$60.99</span></div>
+            <button class="prod3 prbtn bp3">Add to Cart</button>
+        </div>
+
+        <div class="prodDet prodDet4">
+            <img class="image" src="./women's t-shirt.jpg" class="prod4 img"/>
+            <div class="prod4 title">Women's Basic Short Sleeve</div>
+            <div class="prod4 desc">Simple t-shirt for daily use</div>
+            <div class="prod4 price">$20.00 &nbsp;<span id="prstrike">$30.00</span></div>
+            <button class="prod4 prbtn bp4">Add to Cart</button>
+        </div>
+    </div>
+
+</body>
+</html>
