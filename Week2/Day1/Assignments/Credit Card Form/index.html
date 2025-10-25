@@ -1,1 +1,98 @@
-gh
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/submit" method="post">
+        <fieldset>
+            <br/>
+            <img src="./Lock img.jpg" height="20" alt="Lock image"/>
+            <header style="display: inline;">This is a secure 128-bit SSL Encrypted payment. You're safe.</header>
+            <br/><br/>
+
+            <hr/>
+
+            <input required type="radio" id="CC" name="Cards" value="Credit Card"/>
+            <label for="CC">Credit Card(Visa, Mastercard)</label>
+            <img src="./Visa CC.jpeg" height="20" alt="Visa Credit Card icon"/>
+            <img src="./MasterCard CC.png" height="20" alt="MasterCard Credit Card icon"/>
+
+            &nbsp;
+
+            <input type="radio" id="paypal" name="Cards" value="paypal" />
+            <label for="paypal">PayPal</label>
+            <img src="./PayPal CC.png" height="20" alt="PayPal Credit Card icon"/>
+
+            <br/><br/>
+
+            <label for="cardNum">Card number</label>
+            <small>The 16 digits in front of your card</small>
+            <br/>
+            <input required type="number" min="0" id="cardNum" name="cardnum"/>
+
+            <br/><br/>
+
+            <label for="month">Expiration date</label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <label for="cvdetails">CVV2/CVC2</label>
+
+            <br/>
+
+            <select required id="month" name="month">
+                <option disabled selected>Month</option>
+                <option>Jan</option>
+                <option>Feb</option>
+                <option>Mar</option>
+                <option>Apr</option>
+                <option>May</option>
+                <option>Jun</option>
+                <option>Jul</option>
+                <option>Aug</option>
+                <option>Sep</option>
+                <option>Oct</option>
+                <option>Nov</option>
+                <option>Dec</option>
+            </select>
+
+            /
+
+            <select required id="year" name="year">
+                <option disabled selected>Year</option>
+                <option>2000</option>
+                <option>2001</option>
+                <option>2002</option>
+                <option>2003</option>
+                <option>2004</option>
+            </select>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;
+
+            <input required type="number" min="0" id="cvdetails" name="cvdetails"/>
+            <small>The last 3 digits displayed on the back of your card</small>
+
+            <br/><br/>
+
+            <label for="nameOnCard">Full Name on a Card</label>
+            <br/>
+            <input required type="text" id="nameOnCard" name="nameOnCard"/>
+
+            <br/><br/>
+
+            <hr/>
+
+            <footer>
+                You will be charged $29.00 every month
+            </footer>
+
+        </fieldset>
+
+        <input type="submit" value="Complete Transaction"/>
+
+    </form>
+
+</body>
+</html>
