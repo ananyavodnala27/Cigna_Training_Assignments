@@ -1,1 +1,75 @@
-ff
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/submit.php" method="get">
+        <fieldset>
+            <h1>WELCOME TO ITALIAN PIZZA!</h1>
+            <p>We deliver pizza in 40 minutes max. If not - Pizza's on us!</p>
+
+            <hr/>
+
+            <br/>
+
+            <label for="email">Email</label>
+            <br/>
+            <input type="text" id="email" name="email"/>
+
+            <br/><br/>
+
+            <label for="phone">Phone</label>
+            <br/>
+            <input type="number" id="phone" name="phone" placeholder="Area" min="0" />
+            &nbsp;
+            <input type="number" id="Local1" name="phone" placeholder="Local" min="0" />
+            &nbsp;
+            <input type="number" id="Local2" name="phone" placeholder="Local" min="0" />
+
+            <br/><br/>
+
+            <label for="slicesNo">Number of slices</label>
+            <br/>
+            <input type="number" id="slicesNo" min="1" name="slicesNo"/>
+
+            <br/><br/>
+
+            Pizza Size
+            <br/>
+            <input type="radio" id="8-inch" name="size" value="8-inch"/>
+            <label for="8-inch">8-inch</label>
+            <input type="radio" id="10-inch" name="size" value="10-inch"/>
+            <label for="10-inch">10-inch</label>
+            <input type="radio" id="12-inch" name="size" value="12-inch"/>
+            <label for="12-inch">12-inch</label>
+            <input type="radio" id="14-inch" name="size" value="14-inch"/>
+            <label for="14-inch">14-inch</label>
+
+            <br/><br/>
+
+            Toppings
+            <br/>
+            <input type="checkbox" id="olives" name="toppings" value="olives"/>
+            <label for="olives">Olives</label>
+            <input type="checkbox" id="paneer" name="toppings" value="paneer"/>
+            <label for="paneer">Paneer</label>
+            <input type="checkbox" id="onions" name="toppings" value="onions"/>
+            <label for="onions">Onions</label>
+            <input type="checkbox" id="capsicum" name="toppings" value="capsicum"/>
+            <label for="capsicum">Capsicum</label>
+
+            <br/><br/>
+
+            <input type="checkbox" required id="terms" name="terms" value="agree"/>I agree to the TERMS & CONDITIONS
+
+            <br/><br/>
+
+        </fieldset>
+        <!-- <input type="submit" value="Order Now"> -->
+        <button type="submit" value="Order Now">Order Now</button>
+    </form>
+</body>
+</html>
