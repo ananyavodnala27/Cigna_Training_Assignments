@@ -30,7 +30,7 @@
         }
 
         .btn{
-            flex: 1;
+            flex: 1 1 0;
             max-width: 100px;
             border-radius: 15px;
             padding: 5px;
@@ -89,13 +89,13 @@
             width: 100%;
         }
 
-        @media (max-width: 1440px){
+        @media (max-width: 800px){
             .prodDetContainer{
                 flex-direction: column;
             }
 
             .image{
-                height: auto;
+                height: auto; /* TO PRESERVE ASPECT-RATIO */
             }
 
         }
@@ -119,36 +119,36 @@
     <br/><br/>
 
     <div class="prodDetContainer">
-        <div class="prodDet prodDet1">
+        <div class="prodDet">
             <img class="image" src="./Cotton t-shirt.jpg" class="prod1 img"/>
-            <div class="prod1 title">Cotton T-Shirt</div>
-            <div class="prod1 desc">Simple t-shirt for daily use</div>
-            <div class="prod1 price">$35.00 &nbsp;<span id="prstrike">$45.99</span></div>
-            <button class="prod1 prbtn bp1">Add to Cart</button>
+            <div class="title">Cotton T-Shirt</div>
+            <div class="desc">Simple t-shirt for daily use</div>
+            <div class="price">$35.00 &nbsp;<span id="prstrike">$45.99</span></div>
+            <button class="prbtn">Add to Cart</button>
         </div>
 
-        <div class="prodDet prodDet2">
+        <div class="prodDet">
             <img class="image" src="./Short sleeve.jpg" class="prod2 img"/>
-            <div class="prod2 title">Men's Short Sleeve T-Shirt</div>
-            <div class="prod2 desc">Simple t-shirt for daily use</div>
-            <div class="prod2 price">$33.00 &nbsp;<span id="prstrike">$40.99</span></div>
-            <button class="prod2 prbtn bp2">Add to Cart</button>
+            <div class="title">Men's Short Sleeve T-Shirt</div>
+            <div class="desc">Simple t-shirt for daily use</div>
+            <div class="price">$33.00 &nbsp;<span id="prstrike">$40.99</span></div>
+            <button class="prbtn">Add to Cart</button>
         </div>
 
-        <div class="prodDet prodDet3">
+        <div class="prodDet">
             <img class="image" src="./Simple t-shirt.jpg" class="prod3 img"/>
-            <div class="prod3 title">UA Tech T-Shirt</div>
-            <div class="prod3 desc">Simple t-shirt for daily use</div>
-            <div class="prod3 price">$50.00 &nbsp;<span id="prstrike">$60.99</span></div>
-            <button class="prod3 prbtn bp3">Add to Cart</button>
+            <div class="title">UA Tech T-Shirt</div>
+            <div class="desc">Simple t-shirt for daily use</div>
+            <div class="price">$50.00 &nbsp;<span id="prstrike">$60.99</span></div>
+            <button class="prbtn">Add to Cart</button>
         </div>
 
-        <div class="prodDet prodDet4">
+        <div class="prodDet">
             <img class="image" src="./women's t-shirt.jpg" class="prod4 img"/>
-            <div class="prod4 title">Women's Basic Short Sleeve</div>
-            <div class="prod4 desc">Simple t-shirt for daily use</div>
-            <div class="prod4 price">$20.00 &nbsp;<span id="prstrike">$30.00</span></div>
-            <button class="prod4 prbtn bp4">Add to Cart</button>
+            <div class="title">Women's Basic Short Sleeve</div>
+            <div class="desc">Simple t-shirt for daily use</div>
+            <div class="price">$20.00 &nbsp;<span id="prstrike">$30.00</span></div>
+            <button class="prbtn">Add to Cart</button>
         </div>
     </div>
 
