@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .outerContainer{
+            background-color: purple;
+            padding: 10px;
+        }
+
+        .container{
+            background-color: white;
+            padding: 10px;
+        }
+
+        label{
+            font-weight: 500;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="outerContainer">
+        <div class="container">
+            <label for="prodName">Product Name : </label>
+            <input type="text" id="prodName" name="prodName" />
+
+            <br/><br/>
+
+            <label for="unitPrice">Unit Price : </label>
+            <input type="number" id="unitPrice" name="unitPrice"/>
+
+            <br/><br/>
+
+            <label for="qty">Quantity : </label>
+            <input type="number" id="qty" name="qty"/>
+
+            <br/><br/>
+
+            <button type="submit" id="submitBtn" value="Get Total" onclick="getTotalAmount()">Get Total</button>
+
+            <br/>
+
+            <p id="displayTA"></p>
+
+        </div>
+    </div>
+
+    <script>
+
+        function getTotalAmount(){
+
+            let unitP = document.getElementById("unitPrice").value;
+            let qty = document.getElementById("qty").value;
+
+            let totAmt = parseInt(unitP) * parseInt(qty);
+
+            if(qty > 30)
+            {
+                totAmt = totAmt - (0.2 * totAmt);
+                document.getElementById("displayTA").innerHTML = `Total Amount after 10% discount: ${totAmt}`;
+            }
+            else if(qty > 20)
+            {
+                totAmt = totAmt - (0.15 * totAmt);
+                document.getElementById("displayTA").innerHTML = `Total Amount after 15% discount: ${totAmt}`;
+            }
+            else if(qty > 10)
+            {
+                totAmt = totAmt - (0.1 * totAmt);
+                document.getElementById("displayTA").innerHTML = `Total Amount after 20% discount: ${totAmt}`;
+            }
+            else
+            {
+                document.getElementById("displayTA").innerHTML = `Total Amount : ${totAmt}`;
+            }
+
+        }
+
+    </script>
+</body>
+</html>
