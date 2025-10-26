@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .outerDiv{
+            padding: 10px;
+            background-color: #1A2A4F;
+        }
+
+        .innerDiv{
+            padding: 10px;
+            background-color: #F7A5A5;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        .textCol{
+            color: #1A2A4F;
+        }
+
+        .baseCText{
+            font-weight: bold;
+        }
+
+        #submitBtn{
+            color: #F7A5A5;
+            padding: 5px 10px;
+            background-color: #1A2A4F;
+        }
+
+        #info{
+            color: #1A2A4F;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="outerDiv">
+        <div class="innerDiv">
+            <h1 class="textCol">Billing System</h1>
+
+            <label for="baseCost" class="textCol baseCText">Meal Base Cost : </label>
+            <input type="number" id="baseCost" name="baseCost"/>
+
+            <br/><br/>
+
+            <button type="submit" id="submitBtn" value="submitBtn" onclick="getBillDetails()">Get Bill Details</button>
+
+            <p id="info"></p>
+        </div>
+    </div>
+
+    <script>
+
+        function getBillDetails()
+        {
+            let baseCost = document.getElementById("baseCost").value;
+            const tipPercent = 10;
+            const taxPercent = 8;
+
+            let totAmt = parseInt(baseCost) + (0.1 * parseInt(baseCost)) + (0.08 * parseInt(baseCost));
+            totAmt = Math.round(totAmt);
+
+            let str = `Tip Amount : ${tipPercent}%<br/>Tax Amount : ${taxPercent}%<br/>Total Amount : ${totAmt}`;
+
+            document.getElementById("info").innerHTML = str;
+
+            // document.getElementById("info").style.color = "#1A2A4F";
+
+        }
+
+
+    </script>
+</body>
+</html>
