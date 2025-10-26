@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        h1{
+            text-align: center;
+        }
+
+        p{
+            display: inline;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>Courses</h1>
+
+    <label for="addCourse">Add a Course : </label>
+    <input type="text" id="addCourse"/>
+    <button type="submit" value="addCourse" onclick="addCourse()">Add Course</button>
+    &nbsp;&nbsp;
+    <p id="displayAddStatus"></p>
+    <br/><br/>
+
+    <label for="removeCourse">Remove a Course : </label>
+    <input type="text" id="removeCourse"/>
+    <button type="submit" value="removeCourse" onclick="removeCourse()">Remove Course</button>
+    <p id="displayRemoveStatus"></p>
+
+    <br/><br/>
+
+    <button type="submit" value="showCourses" onclick="showCourses()">View Courses</button>
+
+    <ul id="courseList"></ul>
+
+    <script>
+
+        let courses = ["JavaScript", "React", "Node", "C#"];
+
+        let courseDisplay = document.getElementById("courseList");
+
+        function showCourses()
+        {
+            let str = "";
+            if(courses.length === 0)
+            {
+                str += "No Courses!";
+            }
+            else
+            {
+                for(let i = 0; i < courses.length; i ++)
+                {
+                    str += `<li>${courses[i]}</li><br/>`;
+                }
+            }
+            courseDisplay.innerHTML = str;
+        }
+
+        function addCourse()
+        {
+            let courseToAdd = document.getElementById("addCourse").value;
+            if(courses.includes(courseToAdd))
+            {
+                document.getElementById("displayAddStatus").innerHTML = "Course is already added!";
+            }
+            else{
+                courses.push(courseToAdd);
+                document.getElementById("displayAddStatus").innerHTML = "Course Added Successfully!";
+            }
+        }
+
+        function removeCourse()
+        {
+            let courseToRemove = document.getElementById("removeCourse").value;
+            if(courses.includes(courseToRemove))
+            {
+                let courseIdx = courses.indexOf(courseToRemove);
+                courses.splice(courseIdx, 1);
+                document.getElementById("displayRemoveStatus").innerHTML = "Course Removed Successfully!";
+            }
+            else{
+                document.getElementById("displayRemoveStatus").innerHTML = "Course is already deleted!"
+            }
+        }
+
+    </script>
+</body>
+</html>
