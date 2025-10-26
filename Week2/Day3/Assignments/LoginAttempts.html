@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Login Page</legend>
+
+            <p id="p1">Enter your Credentials</p>
+
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username"/>
+
+            <br/><br/>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password"/>
+
+            <br/><br/>
+
+            <input type="button" id="loginBtn" name="loginBtn" value="Login" onclick="checkCred()" />
+
+        </fieldset>
+    </form>
+
+    <script>
+
+        // let noOfClicks = 0;
+        let noOfInvalidClicks = 0;
+
+        // document.querySelector("#loginBtn").addEventListener("click", checkCred);
+
+        function checkCred()
+        {
+            // noOfClicks++;
+            let uname = document.getElementById("username").value;
+            let pwd = document.getElementById("password").value;
+
+            if(uname === "admin" && pwd === "admin123")
+            {
+                document.getElementById("p1").innerHTML = "Welcome Admin!";
+                document.getElementById("p1").style.color = "green";
+            }
+            else{
+                noOfInvalidClicks++;
+                document.getElementById("p1").innerHTML = "Invalid Credentials!";
+                document.getElementById("p1").style.color = "red";
+            }
+
+            if(noOfInvalidClicks > 3)
+            {
+                alert("Used up all the attempts to login!");
+                // document.getElementById("loginBtn").setAttribute("disabled", true);
+                document.getElementById("loginBtn").disabled = true;
+            }
+        }
+    </script>
+</body>
+</html>
