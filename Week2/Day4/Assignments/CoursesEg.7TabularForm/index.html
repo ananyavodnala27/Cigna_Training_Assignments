@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1{
+            text-align: center;
+        }
+
+        table, th, td{
+            border: solid black 1px;
+            border-collapse: collapse;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <h1>Array of Objects - Tabular Form</h1>
+
+    <table>
+        <tr id="r1">
+            <th id="r1c1">ID</th>
+            <th id="r1c2">Name</th>
+            <th id="r1c3">Course</th>
+        </tr>
+        <tr id="r2">
+            <td id="r2c1"></td>
+            <td id="r2c2"></td>
+            <td id="r2c3"></td>
+        </tr>
+        <tr id="r3">
+            <td id="r3c1"></td>
+            <td id="r3c2"></td>
+            <td id="r3c3"></td>
+        </tr>
+        <tr id="row4">
+            <td id="r4c1"></td>
+            <td id="r4c2"></td>
+            <td id="r4c3"></td>
+        </tr>
+        <tr id="row5">
+            <td id="r5c1"></td>
+            <td id="r5c2"></td>
+            <td id="r5c3"></td>
+        </tr>
+    </table>
+
+    <button type="button" onclick="fillTable()">Show Data</button>
+
+    <script>
+
+        let studentsArray = [
+                {id : 10256, name : "Scott", course : "React"},
+                {id : 10257, name : "Adam", course : "Angular"},
+                {id : 10258, name : "Brittany", course : "Vue"},
+                {id : 10259, name : "Jack", course : "Node"},
+                {id : 10260, name : "Blake", course : "Express"},
+            ];
+
+        function fillTable()
+        {
+            for(let i = 0; i < studentsArray.length; i ++)
+            {
+                // for(let j = 0; j < ; j++ )
+                // {
+                //     document.getElementById("")
+                // }
+            }
+        }
+
+    </script>
+</body>
+</html>
