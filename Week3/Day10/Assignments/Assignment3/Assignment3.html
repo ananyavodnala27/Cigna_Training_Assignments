@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        
+        h1{
+            text-align: center;
+        }
+
+        #secElement{
+            display: flex;
+            gap: 10px;
+            justify-content: space-around;
+            padding: 1rem;
+        }
+
+        #secElement div{
+            flex: 1 1 0;
+            padding: 0.5rem;
+            text-align: center;
+            /* background-color: beige; */
+        }
+
+        img{
+            height: 200px;
+        }
+
+        span{
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        p{
+            font-size: 20px;
+        }
+
+        #addProduct{
+            padding: 10px;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <h1>Product Display</h1>
+    <br/>
+    <button id="addProduct">Add Product</button>
+    <section id="secElement"></section>
+
+    <script>
+
+        let btn = document.getElementById("addProduct");
+        let sectionTagObj = document.getElementById("secElement");
+        
+        let productsArr = [
+            {img: "./Phone img.jpg", name: "Phone", descOfProd: "It is a mobile device."},
+            {img: "./Laptop img.jpg", name: "Laptop", descOfProd: "a small, portable personal computer (PC)."},
+            {img: "./TV img.jpg", name: "TV", descOfProd: "System for transmitting moving images and sound over a distance."},
+            {img: "./Keyboard img.jpg", name: "Keyboard", descOfProd: "Input device with an array of buttons, or keys."},
+            {img: "./Mouse img.jpg", name: "Mouse", descOfProd: "A handheld input device that controls a cursor on a computer screen."}
+        ];
+
+        let index = 0;
+
+        btn.addEventListener("click", () => {
+
+            if(index >= productsArr.length)
+            {
+                let pOutOfItems = document.createElement("p");
+                pOutOfItems.style.textAlign = "center";
+                pOutOfItems.innerHTML = "No items Left!";
+                document.body.appendChild(pOutOfItems);
+            }
+
+            else
+            {
+                let divObj = document.createElement("div");
+
+                let imgObj = document.createElement("img");
+                imgObj.setAttribute("src", productsArr[index].img);
+
+                let spanNameObj = document.createElement("span");
+                spanNameObj.innerHTML = `<br/>${productsArr[index].name}`;
+
+                let pDescObj = document.createElement("p");
+                pDescObj.innerHTML = productsArr[index].descOfProd;
+
+                divObj.appendChild(imgObj);
+                divObj.appendChild(spanNameObj);
+                divObj.appendChild(pDescObj);
+                sectionTagObj.appendChild(divObj);
+            }
+            index ++;
+        });
+
+    </script>
+</body>
+</html>
