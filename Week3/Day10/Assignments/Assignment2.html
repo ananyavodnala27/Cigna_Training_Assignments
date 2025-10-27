@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        
+        h1{
+            text-align: center;
+        }
+
+        table, th, td{
+            border-collapse: collapse;
+            border: 2px solid black;
+        }
+
+        /* document.getElementsByClassName("col")[0].style.padding = "5px"; */
+
+        .col{
+            padding: 10px;
+        }
+
+    </style>
+    
+</head>
+<body>
+    
+    <h1>Table</h1>
+
+    <table>
+        <tr class="row">
+            <th class="col">Name</th>
+            <th class="col">Employee ID</th>
+            <th class="col">Department</th>
+        </tr>
+        <tr class="row">
+            <td class="col">Jack</td>
+            <td class="col">100</td>
+            <td class="col">IT</td>
+        </tr>
+        <tr class="row">
+            <td class="col">Brittany</td>
+            <td class="col">101</td>
+            <td class="col">HR</td>
+        </tr>
+        <tr class="row">
+            <td class="col">Helen</td>
+            <td class="col">102</td>
+            <td class="col">Consulting</td>
+        </tr>
+        <tr class="row">
+            <td class="col">Blake</td>
+            <td class="col">103</td>
+            <td class="col">IT</td>
+        </tr>
+        <tr class="row">
+            <td class="col">John</td>
+            <td class="col">104</td>
+            <td class="col">Consulting</td>
+        </tr>
+    </table>
+
+    <script>
+
+        let rowArr = document.getElementsByClassName("row");
+
+        document.addEventListener("click", function(event){
+            // console.log(event.target);
+            var colSelected = event.target;
+            var nearestRowToCol = colSelected.closest("tr");
+            // console.log(nearestRowToCol);
+            // nearestRowToCol.style.backgroundColor = "purple";
+            let rowIdx = 0;
+            for(var i in rowArr)
+            {
+                if(rowArr[i] == nearestRowToCol)
+                {
+                    console.log(i);
+                    rowIdx = parseInt(i);
+                }
+            }
+
+            for(var i = rowIdx; i < rowArr.length && i !== 0; i = i + 2)
+            {
+                rowArr[i].style.backgroundColor = "purple";
+                console.log(`${i}`);
+            }
+
+            for(var i = rowIdx; i > 0; i = i - 2)
+            {
+                rowArr[i].style.backgroundColor = "purple";
+                console.log(`${i}`);
+            }
+
+        });
+
+        // console.log(rowArr);
+        // for(var i = 1; i < rowArr.length; i = i + 2)
+        // {
+            // console.log(rowArr[i]);
+            // rowArr[i].style.backgroundColor = "purple";
+        // }
+
+    </script>
+</body>
+</html>
