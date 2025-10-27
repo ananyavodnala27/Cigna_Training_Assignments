@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Functions Example</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    input, textarea, button { margin: 5px; }
+    .section { margin-bottom: 20px; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
+  </style>
+</head>
+<body>
+
+  <h2>JavaScript Functions Demo</h2>
+
+  <!-- a. Find Average -->
+  <div class="section">
+    <h3>a. Find Average</h3>
+    <input type="number" id="totalMarks" placeholder="Total Marks">
+    <input type="number" id="numSubjects" placeholder="No. of Subjects">
+    <button onclick="handleAverage()">Find Average</button>
+    <p id="avgResult"></p>
+  </div>
+
+  <!-- b. Power Value -->
+  <div class="section">
+    <h3>b. Power Value (x<sup>y</sup>)</h3>
+    <input type="number" id="base" placeholder="Enter x (Base)">
+    <input type="number" id="exponent" placeholder="Enter y (Exponent)">
+    <button onclick="handlePower()">Find Power</button>
+    <p id="powerResult"></p>
+  </div>
+
+  <!-- c. Word Count -->
+  <div class="section">
+    <h3>c. Count Words in String</h3>
+    <textarea id="inputString" placeholder="Enter text here"></textarea><br>
+    <button onclick="handleWordCount()">Count Words</button>
+    <p id="wordResult"></p>
+  </div>
+
+  <script>
+    // ---------- a. Function to Find Average ----------
+    function findAverage(totalMarks, numSubjects) {
+      if (numSubjects === 0) return 0;
+      return totalMarks / numSubjects;
+    }
+
+    function handleAverage() {
+      let total = parseFloat(document.getElementById("totalMarks").value);
+      let subjects = parseInt(document.getElementById("numSubjects").value);
+
+      if (isNaN(total) || isNaN(subjects) || subjects <= 0) {
+        document.getElementById("avgResult").innerText = "Enter valid numbers!";
+        return;
+      }
+
+      let avg = findAverage(total, subjects);
+      document.getElementById("avgResult").innerText = "Average = " + avg.toFixed(2);
+    }
+
+    // ---------- b. Function to Find Power ----------
+    function findPower(x, y) {
+      return Math.pow(x, y);
+    }
+
+    function handlePower() {
+      let x = parseFloat(document.getElementById("base").value);
+      let y = parseInt(document.getElementById("exponent").value);
+
+      if (isNaN(x) || isNaN(y)) {
+        document.getElementById("powerResult").innerText = "Enter valid numbers!";
+        return;
+      }
+
+      let result = findPower(x, y);
+      document.getElementById("powerResult").innerText = x + " ^ " + y + " = " + result;
+    }
+
+    // ---------- c. Function to Count Words ----------
+    function countWords(str) {
+      str = str.trim();
+      if (str === "") return 0;
+      return str.split(/\s+/).length;
+    }
+
+    function handleWordCount() {
+      let input = document.getElementById("inputString").value;
+      let words = countWords(input);
+      document.getElementById("wordResult").innerText = "Number of Words = " + words;
+    }
+  </script>
+
+</body>
+</html>

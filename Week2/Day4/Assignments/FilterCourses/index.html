@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Dynamic Table with Filter</title>
+
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Students Table (Filtered by Course)</h2>
+
+  <label for="course">Choose Course:</label>
+  <select id="course">
+    <option value="all">All</option>
+    <option value="React">React</option>
+    <option value="Angular">Angular</option>
+    <option value="Vue">Vue</option>
+    <option value="Node">Node</option>
+    <option value="Express">Express</option>
+  </select>
+
+  <button onclick="showData()">Show Data</button>
+
+  <br><br>
+  <div id="tableContainer"></div>
+
+  <script>
+    const students = [
+      { id: 10256, name: "Scott", course: "React" },
+      { id: 10257, name: "Adam", course: "Angular" },
+      { id: 10258, name: "Brittany", course: "Vue" },
+      { id: 10259, name: "Jack", course: "Node" },
+      { id: 10260, name: "Blake", course: "Express" },
+    ];
+
+    function showData() {
+      const course = document.getElementById("course").value;
+      const tableDiv = document.getElementById("tableContainer");
+
+      // Filter the data
+      const filtered = course === "all"
+        ? students
+        : students.filter(s => s.course === course);
+
+      // Build the table as HTML string (simpler)
+      let tableHTML = "<table><tr><th>ID</th><th>Name</th><th>Course</th></tr>";
+
+      filtered.forEach(s => {
+        tableHTML += `<tr><td>${s.id}</td><td>${s.name}</td><td>${s.course}</td></tr>`;
+      });
+
+      tableHTML += "</table>";
+
+      // Show message if no data
+      tableDiv.innerHTML = filtered.length ? tableHTML : "<p>No students found.</p>";
+    }
+  </script>
+
+</body>
+</html>
