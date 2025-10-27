@@ -1,6 +1,18 @@
 <!doctype html>
 <html>
-<head><meta charset="utf-8"><title>Delegation Example</title></head>
+<head>
+  <meta charset="utf-8">
+  <title>Delegation Example</title>
+
+  <style>
+
+    li a{
+      display: inline-block;
+    }
+
+  </style>
+
+</head>
 <body>
 
     <h3>Adding Events Dynamically in JavaScript</h3>
@@ -9,8 +21,8 @@
     <fieldset>
         <legend>Tasks in my Hand</legend>
         <ul id="list1" style="border:2px solid blue; padding : 30px;">
-            <li>Send E-mail &nbsp<a href="#">Delete</a></li>
-            <li>Do Shopping &nbsp<a href="#">Delete</a></li>
+            <li>Send E-mail&nbsp<a href="#">Delete</a></li>
+            <li>Do Shopping&nbsp<a href="#">Delete</a></li>
         </ul>
 
     </fieldset>
@@ -25,12 +37,14 @@
 
     // const anchorTagArr = document.getElementsByTagName("a");
 
-    
+    // document.addEventListener("click", function(event){
+    //   console.log(event.target.tagName);
+    // });
     
     listObj.addEventListener("click", function(event)
     {
         if( event.target.tagName == "LI" )
-        {           
+        {           console.log(event.target);
 
           if( event.target.style.textDecoration == "line-through")
           {
@@ -40,8 +54,15 @@
           {
             event.target.style.textDecoration = "line-through";
           }
+        }
+        else if(event.target.tagName == "A")
+        {
+            // console.log(event.target);
+            var listObjToRemove = event.target.closest("li");
+            // console.log(listObjToRemove);
 
-          
+            var listObj = document.getElementById("list1");
+            listObj.removeChild(listObjToRemove);
         }
     });
 
