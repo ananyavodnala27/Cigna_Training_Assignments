@@ -4,10 +4,10 @@ function ProductDetails(){
 
     const [products, setProducts] = useState([]);
 
-    const [pid, setPid] = useState();
-    const [pname, setPname] = useState();
-    const [price, setPrice] = useState();
-    const [display, setDisplay] = useState();
+    // const [pid, setPid] = useState();
+    const [pname, setPname] = useState("");
+    const [price, setPrice] = useState("");
+    const [display, setDisplay] = useState("");
 
     useEffect(() => {
         // LOADING INITIAL DATA (API)
