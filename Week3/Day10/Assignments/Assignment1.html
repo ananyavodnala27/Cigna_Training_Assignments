@@ -1,4 +1,5 @@
-<!doctype html>
+<!-- USING TEXT DECORATION CSS -->
+<!-- <!doctype html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -53,6 +54,95 @@
           else
           {
             event.target.style.textDecoration = "line-through";
+          }
+        }
+        else if(event.target.tagName == "A")
+        {
+            // console.log(event.target);
+            var listObjToRemove = event.target.closest("li");
+            // console.log(listObjToRemove);
+
+            var listObj = document.getElementById("list1");
+            listObj.removeChild(listObjToRemove);
+        }
+    });
+
+    btnObj.addEventListener("click", function(event)
+    {
+         var listItemObj = document.createElement("LI");				 
+         var textObj = document.getElementById("t1");	
+         var anchorObj = document.createElement("a");
+        anchorObj.setAttribute("href", "#");
+        anchorObj.innerHTML = "Delete";
+				 listItemObj.innerHTML =  textObj.value + " &nbsp";
+                 listItemObj.append(anchorObj);
+				 listObj.appendChild(listItemObj);
+         textObj.value = "";
+    });
+
+
+   
+  </script>
+</body>
+</html> -->
+
+<!-- USING LIST STYLE CSS -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Delegation Example</title>
+
+  <style>
+
+    /* NOT REQUIRED */
+    /* li a{
+      display: inline-block;
+    } */
+
+  </style>
+
+</head>
+<body>
+
+    <h3>Adding Events Dynamically in JavaScript</h3>
+    <hr/>
+
+    <fieldset>
+        <legend>Tasks in my Hand</legend>
+        <ul id="list1" style="border:2px solid blue; padding : 30px;">
+            <li>Send E-mail&nbsp<a href="#">Delete</a></li>
+            <li>Do Shopping&nbsp<a href="#">Delete</a></li>
+        </ul>
+
+    </fieldset>
+  <br/>
+  <input  id="t1" placeholder="New Task Info..." type="text"  />
+  <button id="addButton">Add Task</button>
+
+  <script>
+
+    const listObj = document.getElementById("list1");
+    const btnObj = document.getElementById("addButton"); 
+
+    // const anchorTagArr = document.getElementsByTagName("a");
+
+    // document.addEventListener("click", function(event){
+    //   console.log(event.target.tagName);
+    // });
+    
+    listObj.addEventListener("click", function(event)
+    {
+        if( event.target.tagName == "LI" )
+        {           console.log(event.target);
+
+          if( event.target.style.listStyle == "line-through")
+          {
+             event.target.style.listStyle = "none";
+          }
+          else
+          {
+            event.target.style.listStyle = "line-through";
           }
         }
         else if(event.target.tagName == "A")
