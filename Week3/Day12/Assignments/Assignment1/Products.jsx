@@ -8,11 +8,11 @@ function ProductDetails(){
         // LOADING INITIAL DATA (API)
         // 1 WAY OF FILLING DATA TO products
         const productData = [
-            {pid : 1, pname: "Laptop", price: 60000, Display: "LED"},
-            {pid : 2, pname: "TV", price: 680000, Display: "LED"},
-            {pid : 3, pname: "Smart Watch", price: 8000, Display: "Amoled"},
-            {pid : 4, pname: "TV", price: 55000, Display: "LED"},
-            {pid : 5, pname: "TV", price: 100000, Display: "LCD"}
+            {pid : 1, pname: "Laptop", price: 60000, display: "LED"},
+            {pid : 2, pname: "Keyboard", price: 8000, display: "LED"},
+            {pid : 3, pname: "Smart Watch", price: 8000, display: "Amoled"},
+            {pid : 4, pname: "TV Remote", price: 5000, display: "LED"},
+            {pid : 5, pname: "Smart Phone", price: 100000, display: "LCD"}
         ];
         setProducts(productData);
     }, []);
@@ -22,11 +22,11 @@ function ProductDetails(){
     //     // 2ND WAY OF FILLING DATA TO products
     //     setProducts(
     //         [
-    //             {pid : 1, pname: "Laptop", price: 60000, Display: "LED"},
-    //             {pid : 2, pname: "TV", price: 680000, Display: "LED"},
-    //             {pid : 3, pname: "Smart Watch", price: 8000, Display: "Amoled"},
-    //             {pid : 4, pname: "TV", price: 55000, Display: "LED"},
-    //             {pid : 5, pname: "TV", price: 100000, Display: "LCD"}
+    //              {pid : 1, pname: "Laptop", price: 60000, display: "LED"},
+    //              {pid : 2, pname: "Keyboard", price: 8000, display: "LED"},
+    //              {pid : 3, pname: "Smart Watch", price: 8000, display: "Amoled"},
+    //              {pid : 4, pname: "TV Remote", price: 5000, display: "LED"},
+    //              {pid : 5, pname: "Smart Phone", price: 100000, display: "LCD"}
     //         ]
     //     );
     // }, []);

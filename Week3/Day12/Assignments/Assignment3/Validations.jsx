@@ -9,6 +9,9 @@ function ProductDetails(){
     const [price, setPrice] = useState("");
     const [display, setDisplay] = useState("");
 
+    const [prodNameError, setProductNameError] = useState();
+    const [priceError, setPriceError] = useState();
+
     useEffect(() => {
         // LOADING INITIAL DATA (API)
         // 1 WAY OF FILLING DATA TO products
@@ -47,6 +50,32 @@ function ProductDetails(){
     );
 
     function addProduct(){
+
+        setProductNameError("");
+        setPriceError("");
+
+        if(pname.trim() === "")
+        {
+            setProductNameError("Product Name is Required");
+            return;
+        }
+        else if(pname.length < 4)
+        {
+            setProductNameError("Product Name Should be ATLEAST 4 Characters Long.");
+            return;
+        }
+
+        if(price === "")
+        {
+            setPriceError("Price is Required");
+            return;
+        }
+        else if(parseInt(price) < 0)
+        {
+            setPriceError("Price Should be Greater than 0");
+            return;
+        }
+
         const newProduct = {pname : pname, price: price, display : display};
         setProducts([...products, newProduct]);
         setPname("");
@@ -87,6 +116,7 @@ function ProductDetails(){
             <label>
                 Product Name:
                 <input type="text" value={pname} onChange={(e) => setPname(e.target.value)}/>
+                <span>{prodNameError}</span>
             </label>
 
             <br/><br/>
@@ -94,6 +124,7 @@ function ProductDetails(){
             <label>
                 Product Price:
                 <input type="number" value={price} onChange={(e) => setPrice(e.target.value)}/>
+                <span>{priceError}</span>
             </label>
 
             <br/><br/>
