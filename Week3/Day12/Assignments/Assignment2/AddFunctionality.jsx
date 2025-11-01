@@ -49,7 +49,6 @@ function ProductDetails(){
     function addProduct(){
         const newProduct = {pname : pname, price: price, display : display};
         setProducts([...products, newProduct]);
-        setPid("");
         setPname("");
         setPrice("");
         setDisplay("");
