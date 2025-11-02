@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -22,37 +22,46 @@
 
     <h1>Array of Objects - Tabular Form</h1>
 
-    <table>
-        <tr id="r1">
-            <th id="r1c1">ID</th>
-            <th id="r1c2">Name</th>
-            <th id="r1c3">Course</th>
-        </tr>
-        <tr id="r2">
-            <td id="r2c1"></td>
-            <td id="r2c2"></td>
-            <td id="r2c3"></td>
-        </tr>
-        <tr id="r3">
-            <td id="r3c1"></td>
-            <td id="r3c2"></td>
-            <td id="r3c3"></td>
-        </tr>
-        <tr id="row4">
-            <td id="r4c1"></td>
-            <td id="r4c2"></td>
-            <td id="r4c3"></td>
-        </tr>
-        <tr id="row5">
-            <td id="r5c1"></td>
-            <td id="r5c2"></td>
-            <td id="r5c3"></td>
-        </tr>
-    </table>
-
-    <br/>
-
     <button type="button" onclick="fillTable()">Show Data</button>
+
+    <br/><br/>
+
+    <table id="table1" style="display: none;">
+      <thead>
+          <tr id="r1">
+              <th id="r1c1">ID</th>
+              <th id="r1c2">Name</th>
+              <th id="r1c3">Course</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
 
     <script>
 
@@ -64,108 +73,24 @@
                 {id : 10260, name : "Blake", course : "Express"},
             ];
 
+        let col = 0;
+
         function fillTable() {
-            for (let i = 0; i < studentsArray.length; i++) {
-                // Row numbers start from 2 since row 1 is header
-                let row = i + 2;
-                document.getElementById(`r${row}c1`).textContent = studentsArray[i].id;
-                document.getElementById(`r${row}c2`).textContent = studentsArray[i].name;
-                document.getElementById(`r${row}c3`).textContent = studentsArray[i].course;
-            }
+
+          for (let row = 0; row < studentsArray.length; row++) {
+
+            // document.getElementById("table1").style.display = "table";
+            document.getElementsByTagName("td")[col].innerHTML = studentsArray[row].id;
+            col ++; // col = 1
+            document.getElementsByTagName("td")[col].innerHTML = studentsArray[row].name;
+            col ++; // col = 2
+            document.getElementsByTagName("td")[col].innerHTML = studentsArray[row].course;
+            col ++; // col = 3
+          };
+          document.getElementById("table1").style.display = "table";
         }
 
     </script>
 </body>
-</html> -->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dynamic Table from Array of Objects</title>
-
-  <style>
-    h1 {
-      text-align: center;
-    }
-
-    table, th, td {
-      border: 1px solid black;
-      border-collapse: collapse;
-      padding: 8px;
-      text-align: center;
-    }
-
-    button {
-      margin-top: 15px;
-      display: block;
-    }
-  </style>
-</head>
-<body>
-
-  <h1>Array of Objects - Dynamic Table</h1>
-
-  <!-- Table container where the table will appear -->
-  <div id="tableContainer"></div>
-
-  <!-- Button to populate table -->
-  <button type="button" id="showBtn">Show Data</button>
-
-  <script>
-    const studentsArray = [
-      { id: 10256, name: "Scott", course: "React" },
-      { id: 10257, name: "Adam", course: "Angular" },
-      { id: 10258, name: "Brittany", course: "Vue" },
-      { id: 10259, name: "Jack", course: "Node" },
-      { id: 10260, name: "Blake", course: "Express" },
-    ];
-
-    // Attach event listener properly (better practice than inline onclick)
-    document.getElementById("showBtn").addEventListener("click", fillTable);
-
-    function fillTable() {
-      const container = document.getElementById("tableContainer");
-      container.innerHTML = ""; // Clear any old table
-
-      // Create table
-      const table = document.createElement("table");
-
-      // Create header
-      const thead = document.createElement("thead");
-      const headerRow = document.createElement("tr");
-
-      const headers = Object.keys(studentsArray[0]); // e.g. ['id', 'name', 'course']
-      headers.forEach(header => {
-        const th = document.createElement("th");
-        th.textContent = header.toUpperCase();
-        headerRow.appendChild(th);
-      });
-
-      thead.appendChild(headerRow);
-      table.appendChild(thead);
-
-      // Create table body
-      const tbody = document.createElement("tbody");
-      studentsArray.forEach(student => {
-        const row = document.createElement("tr");
-
-        headers.forEach(key => {
-          const td = document.createElement("td");
-          td.textContent = student[key];
-          row.appendChild(td);
-        });
-
-        tbody.appendChild(row);
-      });
-
-      table.appendChild(tbody);
-
-      // Add table to container
-      container.appendChild(table);
-    }
-  </script>
-
-</body>
 </html>
+
