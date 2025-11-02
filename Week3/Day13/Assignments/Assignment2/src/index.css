@@ -1,0 +1,27 @@
+h1{
+  text-align: center;
+}
+
+.navBar{
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.container{
+  display: flex;
+  gap: 1rem;
+  justify-content: space-around;
+}
+
+.card{
+  flex: 1 1 0;
+  text-align: center;
+  background-color: #F4F4F4;
+  border-radius: 5px;
+  border: 2px solid #B7A3E3;
+}
+
+.card > img{
+  width: 100%;
+}
