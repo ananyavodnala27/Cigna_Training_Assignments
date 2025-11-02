@@ -1,0 +1,9 @@
+h1{
+  text-align: center;
+}
+
+.navBar{
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
