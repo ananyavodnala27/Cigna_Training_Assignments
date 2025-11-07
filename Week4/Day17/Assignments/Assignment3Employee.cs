@@ -29,9 +29,9 @@ namespace Assignment
         public void PrintDetails()
         {
             Console.WriteLine("----- Employee Salary Details -----");
-            double grossSal = GetGrossSalary();
+            GetGrossSalary();
             Console.WriteLine($"Employee Id : {empId}\nEmployee Name : {name}\nEmployee job : {job}\n{name}'s basic salary : {basic}\nHRA : {HRA}\nDA : {DA}\nIT : {IT}\nPF : {PF}");
-            Console.WriteLine($"Gross Salary : {grossSal}");
+            Console.WriteLine($"Gross Salary : {GetGrossSalary()}");
         }
     }
 
