@@ -3,67 +3,61 @@ using System;
 
 namespace Assignment
 {
-    abstract class Shape
+    public abstract class Shape
     {
         public abstract double CalcArea();
-        public void DisplayArea()
+        
+        public void ShowArea()
         {
-            Console.WriteLine($"Area : {CalcArea()}");
+            Console.WriteLine($"Area :  {CalcArea()}");
         }
     }
-    class Circle : Shape
+
+    public class Circle : Shape
     {
-        public double area;
-        public double radius { get; set;}
-
-        public Circle(double rad)
+        public double Radius { get; set; }
+        
+        public double Area;
+        
+        public Circle(double r)
         {
-            radius = rad;
+            Radius = r;
         }
-
+        
         public override double CalcArea()
         {
-            area = Math.PI * radius * radius;
-            return Math.Round(area, 2);
+            return Area = Math.PI * Radius * Radius;
         }
+        
     }
-
-    class Rectangle : Shape
+    
+    public class Rectangle : Shape
     {
-        public double area;
-        public double length { get; set;}
-        public double breadth { get; set;}
-
+        public double Length {get; set;}
+        public double Breadth {get; set;}
+        public double Area;
+        
         public Rectangle(double length, double breadth)
         {
-            this.length = length;
-            this.breadth = breadth;
+            Length = length;
+            Breadth = breadth;
         }
-
+        
         public override double CalcArea()
         {
-            area = length * breadth;
-            return Math.Round(area, 2);
+            return Area = Length * Breadth;
         }
     }
 
-    internal class Program
+    public class Program
     {
-        
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-
-            Circle c1 = new Circle(10);
-            Circle c2 = new Circle(20);
-
-            Rectangle r1 = new Rectangle(20, 40);
-            Rectangle r2 = new Rectangle(10, 10);
-
-            c1.DisplayArea();
-            c2.DisplayArea();
-
-            r1.DisplayArea();
-            r2.DisplayArea();
+            Shape c1 = new Circle(20);
+            c1.ShowArea();
+            
+            Shape r1 = new Rectangle(10, 20);
+            r1.ShowArea();
         }
     }
 }
