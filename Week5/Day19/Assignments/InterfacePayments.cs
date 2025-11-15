@@ -78,10 +78,10 @@ namespace Assignment
             IPayment creditCard2 = new CreditCardPayment(17282300, "Kavya", new DateTime(2025, 09, 16));
             creditCard2.Pay(5000);
             
-            IPayment UPIPayment1 = new UPIPayment("Kajal@upi", "SBI");
+            IPayment UPIPayment1 = new UPIPayment("arathi@upi", "SBI");
             UPIPayment1.Pay(25000);
             
-            IPayment UPIPayment2 = new UPIPayment("Gautham@upi", "HDFC");
+            IPayment UPIPayment2 = new UPIPayment("anushka@upi", "HDFC");
             UPIPayment2.Pay(18000);
             
             IPayment Paypal1 = new PaypalPayment("yamuna@gmail.com");
