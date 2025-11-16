@@ -14,6 +14,7 @@ namespace ProductsAssignment.Controllers
             new Product() { Id = 3, Name = "Mobile Phone", Price = 40000, Category = "Electronics" }
         };
 
+        [HttpGet]
         public IActionResult GetAll()
         {
             return Ok(Products);
